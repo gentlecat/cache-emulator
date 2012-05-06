@@ -29,6 +29,15 @@ bitset<WORD> CacheEntry::readWord(unsigned int tag)
 	return output;
 }
 
+bitset<WORD> CacheEntry::readWordDirectly(unsigned int tag)
+{
+    age = 0;
+    bitset<WORD> output;
+    unsigned int offset = WORD * tag;
+    for (int bit=0; bit<WORD; bit++) output[bit] = block[offset+bit];
+    return output;
+}
+
 void CacheEntry::writeWord(bitset<WORD> word, unsigned int tag)
 {
 	age = 0;

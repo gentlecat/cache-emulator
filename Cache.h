@@ -14,6 +14,8 @@ public:
 	Cache(Memory &linkedMemory);
 	bitset<WORD> read(unsigned int address, bool &hitChecker);
 	bool write(bitset<WORD> word, unsigned int address, bool &hitChecker);
+    unsigned int getTag(unsigned int entryId);
+    bitset<WORD> getEntryData(unsigned int entryId, unsigned int offset);
 private:
 	Cache(void);
 	Memory *memory;

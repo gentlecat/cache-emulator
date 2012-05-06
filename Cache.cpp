@@ -63,6 +63,19 @@ bool Cache::write(bitset<WORD> word, unsigned int address, bool &hitChecker)
 	return true;
 }
 
+unsigned int Cache::getTag(unsigned int entryId)
+{
+    if (entryId > ENTRIES_IN_CACHE) return NULL;
+    return entries[entryId].getTag();
+}
+
+bitset<WORD> Cache::getEntryData(unsigned int entryId, unsigned int offset)
+{
+    if (entryId > ENTRIES_IN_CACHE) return NULL;
+    if (offset > WORDS_IN_BLOCK) return NULL;
+    return entries[entryId].readWordDirectly(offset);
+}
+
 void Cache::replace(bitset<WORD> newWord, unsigned int newAddress)
 {
 	// Finding beginning of the block

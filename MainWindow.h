@@ -1,7 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "stdafx.h"
 #include <QMainWindow>
+
+using std::bitset;
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +23,7 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    QString getString(bitset<WORD>);
 };
 
 #endif // MAINWINDOW_H

@@ -605,7 +605,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLabel" name="label_49">
+       <widget class="QLabel" name="readLabel">
         <property name="text">
          <string>Address:</string>
         </property>
@@ -616,7 +616,10 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="testB">
+    <widget class="QPushButton" name="readButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -659,7 +662,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QLabel" name="label_50">
+       <widget class="QLabel" name="writeLabel_0">
         <property name="text">
          <string>Address:</string>
         </property>
@@ -681,7 +684,7 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QLabel" name="label_51">
+       <widget class="QLabel" name="writeLabel_1">
         <property name="text">
          <string>Integer: </string>
         </property>
@@ -692,7 +695,10 @@
       </item>
      </layout>
     </widget>
-    <widget class="QPushButton" name="testB_2">
+    <widget class="QPushButton" name="writeButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -717,7 +723,7 @@
      <rect>
       <x>10</x>
       <y>310</y>
-      <width>281</width>
+      <width>221</width>
       <height>141</height>
      </rect>
     </property>
@@ -729,76 +735,110 @@
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>261</width>
+       <width>201</width>
        <height>111</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
+     <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,1">
+      <item row="1" column="0">
+       <widget class="QLabel" name="infoLabel_1">
         <property name="text">
          <string>Memory capacity:</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="label_2">
+      <item row="1" column="1">
+       <widget class="QLabel" name="memoryCapacity">
         <property name="text">
-         <string>TextLabel</string>
+         <string>Unknown</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_3">
+      <item row="3" column="0">
+       <widget class="QLabel" name="infoLabel_2">
+        <property name="text">
+         <string>Words in memory:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="wordsInMemory">
+        <property name="text">
+         <string>Unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="infoLabel_0">
         <property name="text">
          <string>Word size:</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_4">
+      <item row="0" column="1">
+       <widget class="QLabel" name="word">
         <property name="text">
-         <string>TextLabel</string>
+         <string>Unknown</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_5">
+      <item row="4" column="0">
+       <widget class="QLabel" name="infoLabel_3">
         <property name="text">
-         <string>Words in memory</string>
+         <string>Cache capacity:</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1">
-       <widget class="QLabel" name="label_6">
+      <item row="5" column="0">
+       <widget class="QLabel" name="infoLabel_4">
         <property name="text">
-         <string>TextLabel</string>
+         <string>Words in cache:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="cacheCapacity">
+        <property name="text">
+         <string>Unknown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLabel" name="wordsInCache">
+        <property name="text">
+         <string>Unknown</string>
         </property>
        </widget>
       </item>
      </layout>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="groupConsole">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>240</x>
       <y>310</y>
-      <width>311</width>
+      <width>371</width>
       <height>141</height>
      </rect>
     </property>
     <property name="title">
      <string>Console</string>
     </property>
-    <widget class="QTextBrowser" name="textBrowser">
+    <widget class="QTextBrowser" name="console">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>291</width>
+       <width>351</width>
        <height>111</height>
       </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>

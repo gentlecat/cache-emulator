@@ -15,15 +15,19 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    // Filling info
+    ui->word->setText(QString::number(WORD) + " bit");
+    ui->memoryCapacity->setText(QString::number(MEMORY_CAPACITY) + " bit");
+    ui->wordsInMemory->setText(QString::number(WORDS_IN_MEMORY));
+    ui->cacheCapacity->setText(QString::number(ENTRIES_IN_CACHE * BLOCK_LENGTH) + " bit");
+    ui->wordsInCache->setText(QString::number(ENTRIES_IN_CACHE * WORDS_IN_BLOCK));
+
+    refreshCacheDisplay();
+
+
     // Tests:
     connect(ui->actionQuit, SIGNAL(changed()), this, SLOT(refreshCacheDisplay()));
-    bool hit;
-    bitset<32> set = cache.read(1,hit);
-    QString str = QString::fromStdString(set.to_string());
-    ui->data_0_0->setText(str);
-    ui->data_0_1->setText(str);
-    ui->data_0_2->setText(str);
-    ui->data_0_3->setText(str);
+
 }
 
 MainWindow::~MainWindow()
@@ -33,5 +37,64 @@ MainWindow::~MainWindow()
 
 void MainWindow::refreshCacheDisplay()
 {
-    ui->data_0_0->setText("IT WORKS!");
+   // Entry 0
+    ui->tag_0->setText(QString::number(cache.getTag(0)));
+    ui->data_0_0->setText(getString(cache.getEntryData(0, 0)));
+    ui->data_0_1->setText(getString(cache.getEntryData(0, 1)));
+    ui->data_0_2->setText(getString(cache.getEntryData(0, 2)));
+    ui->data_0_3->setText(getString(cache.getEntryData(0, 3)));
+
+    // Entry 1
+    ui->tag_1->setText(QString::number(cache.getTag(1)));
+    ui->data_1_0->setText(getString(cache.getEntryData(1, 0)));
+    ui->data_1_1->setText(getString(cache.getEntryData(1, 1)));
+    ui->data_1_2->setText(getString(cache.getEntryData(1, 2)));
+    ui->data_1_3->setText(getString(cache.getEntryData(1, 3)));
+
+    // Entry 2
+    ui->tag_2->setText(QString::number(cache.getTag(2)));
+    ui->data_2_0->setText(getString(cache.getEntryData(2, 0)));
+    ui->data_2_1->setText(getString(cache.getEntryData(2, 1)));
+    ui->data_2_2->setText(getString(cache.getEntryData(2, 2)));
+    ui->data_2_3->setText(getString(cache.getEntryData(2, 3)));
+
+    // Entry 3
+    ui->tag_3->setText(QString::number(cache.getTag(3)));
+    ui->data_3_0->setText(getString(cache.getEntryData(3, 0)));
+    ui->data_3_1->setText(getString(cache.getEntryData(3, 1)));
+    ui->data_3_2->setText(getString(cache.getEntryData(3, 2)));
+    ui->data_3_3->setText(getString(cache.getEntryData(3, 3)));
+
+    // Entry 4
+    ui->tag_4->setText(QString::number(cache.getTag(4)));
+    ui->data_4_0->setText(getString(cache.getEntryData(4, 0)));
+    ui->data_4_1->setText(getString(cache.getEntryData(4, 1)));
+    ui->data_4_2->setText(getString(cache.getEntryData(4, 2)));
+    ui->data_4_3->setText(getString(cache.getEntryData(4, 3)));
+
+    // Entry 5
+    ui->tag_5->setText(QString::number(cache.getTag(5)));
+    ui->data_5_0->setText(getString(cache.getEntryData(5, 0)));
+    ui->data_5_1->setText(getString(cache.getEntryData(5, 1)));
+    ui->data_5_2->setText(getString(cache.getEntryData(5, 2)));
+    ui->data_5_3->setText(getString(cache.getEntryData(5, 3)));
+
+    // Entry 6
+    ui->tag_6->setText(QString::number(cache.getTag(6)));
+    ui->data_6_0->setText(getString(cache.getEntryData(6, 0)));
+    ui->data_6_1->setText(getString(cache.getEntryData(6, 1)));
+    ui->data_6_2->setText(getString(cache.getEntryData(6, 2)));
+    ui->data_6_3->setText(getString(cache.getEntryData(6, 3)));
+
+    // Entry 7
+    ui->tag_7->setText(QString::number(cache.getTag(7)));
+    ui->data_7_0->setText(getString(cache.getEntryData(7, 0)));
+    ui->data_7_1->setText(getString(cache.getEntryData(7, 1)));
+    ui->data_7_2->setText(getString(cache.getEntryData(7, 2)));
+    ui->data_7_3->setText(getString(cache.getEntryData(7, 3)));
+}
+
+QString MainWindow::getString(bitset<WORD> source)
+{
+    return QString::fromStdString(source.to_string());
 }
