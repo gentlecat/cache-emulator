@@ -1,0 +1,28 @@
+#pragma once
+
+#include <stdafx.h>
+
+#define WORDS_IN_BLOCK 4
+#define BLOCK_LENGTH WORD*WORDS_IN_BLOCK
+
+using std::bitset;
+
+class CacheEntry
+{
+public:
+	CacheEntry(void);
+	CacheEntry(bitset<BLOCK_LENGTH> newBlock, unsigned int newFirstWordTag);
+	bool contains(unsigned int tag);
+	bitset<WORD> readWord(unsigned int tag);
+	void writeWord(bitset<WORD> word, unsigned int tag);
+	bitset<BLOCK_LENGTH> readBlock();
+	unsigned int getTag();
+	unsigned int getAge();
+	void incrementAge();
+	bool isModified();
+private:
+	unsigned int firstWordTag;
+	bool modified;
+	unsigned int age;
+	bitset<BLOCK_LENGTH> block;
+};
