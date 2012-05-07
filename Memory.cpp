@@ -6,7 +6,7 @@ Memory::Memory(void)
 	randomize();
 }
 
-bool Memory::getBit(unsigned int id)
+bool Memory::getBit(const unsigned int &id)
 {
 	if (id < MEMORY_CAPACITY) {
 		return memory[id];
@@ -14,14 +14,14 @@ bool Memory::getBit(unsigned int id)
 	return NULL;
 }
 
-void Memory::writeBit(bool state, unsigned int id)
+void Memory::writeBit(const bool &state, const unsigned int &id)
 {
 	if (id < MEMORY_CAPACITY) {
 		memory[id] = state;
 	}
 }
 
-bitset<WORD> Memory::getWord(unsigned int address)
+bitset<WORD> Memory::getWord(const unsigned int &address)
 {
 	if (address < WORDS_IN_MEMORY)
 	{
@@ -36,7 +36,7 @@ bitset<WORD> Memory::getWord(unsigned int address)
 	return NULL;
 }
 
-void Memory::writeWord(bitset<WORD> word, unsigned int address)
+void Memory::writeWord(const bitset<WORD> &word, const unsigned int &address)
 {
 	if (address < WORDS_IN_MEMORY)
 	{
@@ -54,7 +54,7 @@ void Memory::randomize()
 		memory[bit] = rand() % 2;
 }
 
-void Memory::randomize(unsigned int seed)
+void Memory::randomize(const unsigned int &seed)
 {
 	srand(seed);
 	randomize();

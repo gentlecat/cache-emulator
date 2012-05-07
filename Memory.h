@@ -9,12 +9,12 @@ class Memory
 {
 public:
 	Memory(void);
-	bool getBit(unsigned int id);
-	void writeBit(bool state, unsigned int id);
-    bitset<WORD> getWord(unsigned int address);
-	void writeWord(bitset<WORD> word, unsigned int address);
+    bool getBit(const unsigned int &id);
+    void writeBit(const bool &state, const unsigned int &id);
+    bitset<WORD> getWord(const unsigned int &address);
+    void writeWord(const bitset<WORD> &word, const unsigned int &address);
 	void randomize(void);
-	void randomize(unsigned int seed);
+    void randomize(const unsigned int &seed);
 private:
     bitset<MEMORY_CAPACITY> memory;
 };

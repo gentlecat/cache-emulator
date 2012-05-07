@@ -9,7 +9,6 @@ QT       += core gui
 TARGET = cache-emulator
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
         MainWindow.cpp \
     stdafx.cpp \

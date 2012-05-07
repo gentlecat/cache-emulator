@@ -23,11 +23,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->wordsInCache->setText(QString::number(ENTRIES_IN_CACHE * WORDS_IN_BLOCK));
 
     refreshCacheDisplay();
-
+    connect(ui->readButton, SIGNAL(clicked()), this, SLOT(read()));
+    connect(ui->writeButton, SIGNAL(clicked()), this, SLOT(write()));
 
     // Tests:
-    connect(ui->actionQuit, SIGNAL(changed()), this, SLOT(refreshCacheDisplay()));
-
+    //ui->data_0_0->setStyleSheet("QLabel { background-color : black; color : yellow; }");
 }
 
 MainWindow::~MainWindow()
@@ -94,7 +94,54 @@ void MainWindow::refreshCacheDisplay()
     ui->data_7_3->setText(getString(cache.getEntryData(7, 3)));
 }
 
-QString MainWindow::getString(bitset<WORD> source)
+void MainWindow::read()
 {
-    return QString::fromStdString(source.to_string());
+    bool converted;
+    unsigned int address = ui->readAddress->text().toInt(&converted, 10);
+    if (converted)
+    {
+        bool hit;
+        QString output = getString(cache.read(address, hit));
+        hit ? print(output + " Hit.") : print(output + " Miss.");
+        refreshCacheDisplay();
+    }
+    else
+    {
+        print("Wrong address!");
+    }
+}
+
+void MainWindow::write()
+{
+    bool converted;
+    unsigned int address = ui->writeAddress->text().toInt(&converted, 10);
+    if (converted)
+    {
+        int integer = ui->writeInt->text().toInt(&converted, 10);
+        if (converted)
+        {
+            bool hit;
+            cache.write(bitset<WORD>(integer), address, hit);
+            hit ? print("Hit.") : print("Miss.");
+            refreshCacheDisplay();
+        }
+        else
+        {
+            print("Wrong integer!");
+        }
+    }
+    else
+    {
+        print("Wrong address!");
+    }
+}
+
+void MainWindow::print(const QString &text)
+{
+    ui->console->appendPlainText(text);
+}
+
+QString MainWindow::getString(const bitset<WORD> &word)
+{
+    return QString::fromStdString(word.to_string());
 }

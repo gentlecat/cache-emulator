@@ -11,11 +11,11 @@ class CacheEntry
 {
 public:
 	CacheEntry(void);
-	CacheEntry(bitset<BLOCK_LENGTH> newBlock, unsigned int newFirstWordTag);
-	bool contains(unsigned int tag);
-	bitset<WORD> readWord(unsigned int tag);
-    bitset<WORD> readWordDirectly(unsigned int tag);
-	void writeWord(bitset<WORD> word, unsigned int tag);
+    CacheEntry(const bitset<BLOCK_LENGTH> &newBlock, const unsigned int &newFirstWordTag);
+    bool contains(const unsigned int &tag);
+    bitset<WORD> readWord(const unsigned int &tag);
+    bitset<WORD> readWordDirectly(const unsigned int &tag);
+    void writeWord(const bitset<WORD> &word, const unsigned int &tag);
 	bitset<BLOCK_LENGTH> readBlock();
 	unsigned int getTag();
 	unsigned int getAge();

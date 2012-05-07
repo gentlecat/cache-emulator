@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include <QMainWindow>
+#include "Cache.h"
 
 using std::bitset;
 
@@ -14,16 +15,19 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
     
-public:
+public:    
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 public slots:
     void refreshCacheDisplay();
+    void read();
+    void write();
 
 private:
     Ui::MainWindow *ui;
-    QString getString(bitset<WORD>);
+    void print(const QString &text);
+    QString getString(const bitset<WORD> &word);
 };
 
 #endif // MAINWINDOW_H

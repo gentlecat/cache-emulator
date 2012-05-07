@@ -12,16 +12,16 @@ class Cache
 {
 public:
 	Cache(Memory &linkedMemory);
-	bitset<WORD> read(unsigned int address, bool &hitChecker);
-	bool write(bitset<WORD> word, unsigned int address, bool &hitChecker);
-    unsigned int getTag(unsigned int entryId);
-    bitset<WORD> getEntryData(unsigned int entryId, unsigned int offset);
+    bitset<WORD> read(const unsigned int &address, bool &hitChecker);
+    bool write(const bitset<WORD> &word, const unsigned int &address, bool &hitChecker);
+    unsigned int getTag(const unsigned int &entryId);
+    bitset<WORD> getEntryData(const unsigned int &entryId, const unsigned int &offset);
 private:
 	Cache(void);
 	Memory *memory;
 	CacheEntry entries[ENTRIES_IN_CACHE];
 	void updateAge();
 	CacheEntry* getOldestEntry();	
-	void replace(bitset<WORD> newWord, unsigned int newAddress);
-	void flush(CacheEntry &entry);
+    void replace(const bitset<WORD> &newWord, const unsigned int &newAddress);
+    void flush(CacheEntry &entry);
 };

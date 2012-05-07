@@ -16,7 +16,7 @@ Cache::Cache(Memory &linkedMemory)
 	}
 }
 
-bitset<WORD> Cache::read(unsigned int address, bool &hitChecker)
+bitset<WORD> Cache::read(const unsigned int &address, bool &hitChecker)
 {
 	if (address >= WORDS_IN_MEMORY) return NULL;
 	updateAge();
@@ -42,7 +42,7 @@ bitset<WORD> Cache::read(unsigned int address, bool &hitChecker)
 	return output;
 }
 
-bool Cache::write(bitset<WORD> word, unsigned int address, bool &hitChecker)
+bool Cache::write(const bitset<WORD> &word, const unsigned int &address, bool &hitChecker)
 {
 	if (address >= WORDS_IN_MEMORY) return false;
 	updateAge();
@@ -63,20 +63,20 @@ bool Cache::write(bitset<WORD> word, unsigned int address, bool &hitChecker)
 	return true;
 }
 
-unsigned int Cache::getTag(unsigned int entryId)
+unsigned int Cache::getTag(const unsigned int &entryId)
 {
     if (entryId > ENTRIES_IN_CACHE) return NULL;
     return entries[entryId].getTag();
 }
 
-bitset<WORD> Cache::getEntryData(unsigned int entryId, unsigned int offset)
+bitset<WORD> Cache::getEntryData(const unsigned int &entryId, const unsigned int &offset)
 {
     if (entryId > ENTRIES_IN_CACHE) return NULL;
     if (offset > WORDS_IN_BLOCK) return NULL;
     return entries[entryId].readWordDirectly(offset);
 }
 
-void Cache::replace(bitset<WORD> newWord, unsigned int newAddress)
+void Cache::replace(const bitset<WORD> &newWord, const unsigned int &newAddress)
 {
 	// Finding beginning of the block
 	unsigned int firstWordId = newAddress;
