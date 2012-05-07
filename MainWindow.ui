@@ -894,7 +894,7 @@
     <property name="title">
      <string>Emulator</string>
     </property>
-    <addaction name="actionRandomize_memory"/>
+    <addaction name="actionRandomize"/>
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
@@ -907,16 +907,19 @@
    <property name="text">
     <string>Quit</string>
    </property>
+   <property name="toolTip">
+    <string>Close application</string>
+   </property>
    <property name="shortcut">
     <string>Esc</string>
    </property>
   </action>
-  <action name="actionRandomize_memory">
+  <action name="actionRandomize">
    <property name="text">
     <string>Randomize memory</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+R, F5</string>
+    <string>Ctrl+R</string>
    </property>
   </action>
  </widget>

@@ -26,6 +26,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->readButton, SIGNAL(clicked()), this, SLOT(read()));
     connect(ui->writeButton, SIGNAL(clicked()), this, SLOT(write()));
 
+    // Connecting actions
+    connect(ui->actionRandomize, SIGNAL(triggered()), this, SLOT(randomizeMemory()));
+    connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
+
     // Tests:
     //ui->data_0_0->setStyleSheet("QLabel { background-color : black; color : yellow; }");
 }
@@ -134,6 +138,12 @@ void MainWindow::write()
     {
         print("Wrong address!");
     }
+}
+
+void MainWindow::randomizeMemory()
+{
+    cache.randomizeMemory();
+    refreshCacheDisplay();
 }
 
 void MainWindow::print(const QString &text)

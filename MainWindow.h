@@ -23,6 +23,7 @@ public slots:
     void refreshCacheDisplay();
     void read();
     void write();
+    void randomizeMemory();
 
 private:
     Ui::MainWindow *ui;

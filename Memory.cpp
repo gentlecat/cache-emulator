@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Memory.h"
+#include <time.h>
 
 Memory::Memory(void)
 {
@@ -48,14 +49,9 @@ void Memory::writeWord(const bitset<WORD> &word, const unsigned int &address)
 	}
 }
 
-void Memory::randomize()
+void Memory::randomize(void)
 {
+    srand(time(NULL));
 	for (int bit=0; bit<MEMORY_CAPACITY; bit++)
 		memory[bit] = rand() % 2;
-}
-
-void Memory::randomize(const unsigned int &seed)
-{
-	srand(seed);
-	randomize();
 }

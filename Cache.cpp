@@ -3,17 +3,8 @@
 
 Cache::Cache(Memory &linkedMemory)
 {
-	memory = &linkedMemory;
-	
-	// Filling cache
-	for (int entryId=0, tag=0, offset=0; entryId<ENTRIES_IN_CACHE;
-		entryId++, tag=entryId*WORDS_IN_BLOCK, offset=entryId*BLOCK_LENGTH)
-	{
-		bitset<BLOCK_LENGTH> newBlock;
-		for (int bit=0; bit<BLOCK_LENGTH; bit++)
-			newBlock[bit] = memory->getBit(offset+bit);
-		entries[entryId] = CacheEntry(newBlock, tag);
-	}
+    memory = &linkedMemory;
+    fillCache();
 }
 
 bitset<WORD> Cache::read(const unsigned int &address, bool &hitChecker)
@@ -76,6 +67,12 @@ bitset<WORD> Cache::getEntryData(const unsigned int &entryId, const unsigned int
     return entries[entryId].readWordDirectly(offset);
 }
 
+void Cache::randomizeMemory()
+{
+    memory->randomize();
+    fillCache();
+}
+
 void Cache::replace(const bitset<WORD> &newWord, const unsigned int &newAddress)
 {
 	// Finding beginning of the block
@@ -107,6 +104,18 @@ CacheEntry* Cache::getOldestEntry()
 		if (oldest->getAge() > entries[entryId].getAge())
 			oldest = &entries[entryId];
 	return oldest;
+}
+
+void Cache::fillCache()
+{
+    for (int entryId=0, tag=0, offset=0; entryId<ENTRIES_IN_CACHE;
+        entryId++, tag=entryId*WORDS_IN_BLOCK, offset=entryId*BLOCK_LENGTH)
+    {
+        bitset<BLOCK_LENGTH> newBlock;
+        for (int bit=0; bit<BLOCK_LENGTH; bit++)
+            newBlock[bit] = memory->getBit(offset+bit);
+        entries[entryId] = CacheEntry(newBlock, tag);
+    }
 }
 
 void Cache::updateAge()

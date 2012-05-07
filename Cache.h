@@ -16,10 +16,12 @@ public:
     bool write(const bitset<WORD> &word, const unsigned int &address, bool &hitChecker);
     unsigned int getTag(const unsigned int &entryId);
     bitset<WORD> getEntryData(const unsigned int &entryId, const unsigned int &offset);
+    void randomizeMemory();
 private:
 	Cache(void);
 	Memory *memory;
 	CacheEntry entries[ENTRIES_IN_CACHE];
+    void fillCache();
 	void updateAge();
 	CacheEntry* getOldestEntry();	
     void replace(const bitset<WORD> &newWord, const unsigned int &newAddress);
