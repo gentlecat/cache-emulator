@@ -3,14 +3,14 @@
 
 CacheEntry::CacheEntry()
 {
-	age = 0;
+    age = 0;
 }
 
 CacheEntry::CacheEntry(const bitset<BLOCK_LENGTH> &newBlock, const unsigned int &newFirstWordTag)
 {
 	firstWordTag = newFirstWordTag;
 	modified = false;
-	age = 0;
+    age = 0;
 	block = newBlock;
 }
 
@@ -22,7 +22,7 @@ bool CacheEntry::contains(const unsigned int &tag)
 
 bitset<WORD> CacheEntry::readWord(const unsigned int &tag)
 {
-	age = 0;
+    age = 0;
 	bitset<WORD> output;
 	unsigned int offset = WORD * (tag - firstWordTag);
 	for (int bit=0; bit<WORD; bit++) output[bit] = block[offset+bit];
@@ -31,7 +31,6 @@ bitset<WORD> CacheEntry::readWord(const unsigned int &tag)
 
 bitset<WORD> CacheEntry::readWordDirectly(const unsigned int &tag)
 {
-    age = 0;
     bitset<WORD> output;
     unsigned int offset = WORD * tag;
     for (int bit=0; bit<WORD; bit++) output[bit] = block[offset+bit];
@@ -40,7 +39,7 @@ bitset<WORD> CacheEntry::readWordDirectly(const unsigned int &tag)
 
 void CacheEntry::writeWord(const bitset<WORD> &word, const unsigned int &tag)
 {
-	age = 0;
+    age = 1;
 	unsigned int offset = WORD * (tag - firstWordTag);
 	for (int bitId=0; bitId<WORD; bitId++)
 		block[offset+bitId] = word[bitId];
@@ -49,9 +48,9 @@ void CacheEntry::writeWord(const bitset<WORD> &word, const unsigned int &tag)
 
 bitset<BLOCK_LENGTH> CacheEntry::readBlock() { return block; }
 
-unsigned int CacheEntry::getAge() { return age; }
-
 unsigned int CacheEntry::getTag() {	return firstWordTag; }
+
+unsigned int CacheEntry::getAge() { return age; }
 
 void CacheEntry::incrementAge() { age++; }
 

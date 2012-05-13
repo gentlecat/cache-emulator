@@ -60,6 +60,12 @@ unsigned int Cache::getTag(const unsigned int &entryId)
     return entries[entryId].getTag();
 }
 
+unsigned int Cache::getAge(const unsigned int &entryId)
+{
+    if (entryId > ENTRIES_IN_CACHE) return NULL;
+    return entries[entryId].getAge();
+}
+
 bitset<WORD> Cache::getEntryData(const unsigned int &entryId, const unsigned int &offset)
 {
     if (entryId > ENTRIES_IN_CACHE) return NULL;
@@ -101,7 +107,7 @@ CacheEntry* Cache::getOldestEntry()
 {
 	CacheEntry *oldest = &entries[0];
 	for (int entryId=1; entryId<ENTRIES_IN_CACHE; entryId++)
-		if (oldest->getAge() > entries[entryId].getAge())
+        if (oldest->getAge() < entries[entryId].getAge())
 			oldest = &entries[entryId];
 	return oldest;
 }

@@ -9,19 +9,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>930</width>
+    <width>980</width>
     <height>480</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>930</width>
+    <width>980</width>
     <height>480</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>930</width>
+    <width>980</width>
     <height>480</height>
    </size>
   </property>
@@ -37,23 +37,37 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>911</width>
+      <width>961</width>
       <height>291</height>
      </rect>
     </property>
     <property name="title">
-     <string>Cache contents</string>
+     <string>Содержимое кэша</string>
     </property>
     <widget class="QWidget" name="gridLayoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>891</width>
+       <width>941</width>
        <height>261</height>
       </rect>
      </property>
-     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0,0,0,0,0,0" columnstretch="1,2,3,3,3,3">
+     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0,0,0,0,0,0,0,0,0" columnstretch="1,1,4,4,4,4,0">
+      <item row="6" column="2">
+       <widget class="QLabel" name="data_2_0">
+        <property name="text">
+         <string>NULL</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QLabel" name="data_1_1">
+        <property name="text">
+         <string>NULL</string>
+        </property>
+       </widget>
+      </item>
       <item row="2" column="0">
        <widget class="QLabel" name="entryId_0">
         <property name="font">
@@ -180,27 +194,6 @@
           <stylestrategy>PreferDefault</stylestrategy>
          </font>
         </property>
-        <property name="text">
-         <string>NULL</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QLabel" name="data_1_0">
-        <property name="text">
-         <string>NULL</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="3">
-       <widget class="QLabel" name="data_1_1">
-        <property name="text">
-         <string>NULL</string>
-        </property>
-       </widget>
-      </item>
-      <item row="6" column="2">
-       <widget class="QLabel" name="data_2_0">
         <property name="text">
          <string>NULL</string>
         </property>
@@ -517,7 +510,7 @@
          </font>
         </property>
         <property name="text">
-         <string>ID</string>
+         <string>Индекс</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -535,7 +528,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Tag</string>
+         <string>Тег</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -553,7 +546,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Data 0</string>
+         <string>Данные №1</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -571,7 +564,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Data 1</string>
+         <string>Данные №2</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -589,7 +582,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Data 2</string>
+         <string>Данные №3</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -607,7 +600,160 @@
          </font>
         </property>
         <property name="text">
-         <string>Data 3</string>
+         <string>Данные №4</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="data_1_0">
+        <property name="text">
+         <string>NULL</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="6">
+       <widget class="QLabel" name="label_58">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+          <strikeout>false</strikeout>
+         </font>
+        </property>
+        <property name="text">
+         <string>Возраст</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="6">
+       <widget class="QLabel" name="age_0">
+        <property name="font">
+         <font>
+          <italic>false</italic>
+          <stylestrategy>PreferDefault</stylestrategy>
+         </font>
+        </property>
+        <property name="text">
+         <string>NULL</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="6">
+       <widget class="QLabel" name="age_1">
+        <property name="font">
+         <font>
+          <italic>false</italic>
+          <stylestrategy>PreferDefault</stylestrategy>
+         </font>
+        </property>
+        <property name="text">
+         <string>NULL</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="6">
+       <widget class="QLabel" name="age_2">
+        <property name="font">
+         <font>
+          <italic>false</italic>
+          <stylestrategy>PreferDefault</stylestrategy>
+         </font>
+        </property>
+        <property name="text">
+         <string>NULL</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="6">
+       <widget class="QLabel" name="age_3">
+        <property name="font">
+         <font>
+          <italic>false</italic>
+          <stylestrategy>PreferDefault</stylestrategy>
+         </font>
+        </property>
+        <property name="text">
+         <string>NULL</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="6">
+       <widget class="QLabel" name="age_4">
+        <property name="font">
+         <font>
+          <italic>false</italic>
+          <stylestrategy>PreferDefault</stylestrategy>
+         </font>
+        </property>
+        <property name="text">
+         <string>NULL</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="6">
+       <widget class="QLabel" name="age_5">
+        <property name="font">
+         <font>
+          <italic>false</italic>
+          <stylestrategy>PreferDefault</stylestrategy>
+         </font>
+        </property>
+        <property name="text">
+         <string>NULL</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="6">
+       <widget class="QLabel" name="age_6">
+        <property name="font">
+         <font>
+          <italic>false</italic>
+          <stylestrategy>PreferDefault</stylestrategy>
+         </font>
+        </property>
+        <property name="text">
+         <string>NULL</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="6">
+       <widget class="QLabel" name="age_7">
+        <property name="font">
+         <font>
+          <italic>false</italic>
+          <stylestrategy>PreferDefault</stylestrategy>
+         </font>
+        </property>
+        <property name="text">
+         <string>NULL</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -620,14 +766,14 @@
    <widget class="QGroupBox" name="groupRead">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>670</x>
       <y>310</y>
       <width>301</width>
       <height>51</height>
      </rect>
     </property>
     <property name="title">
-     <string>Read</string>
+     <string>Чтение</string>
     </property>
     <widget class="QWidget" name="horizontalLayoutWidget">
      <property name="geometry">
@@ -642,7 +788,7 @@
       <item>
        <widget class="QLabel" name="readLabel">
         <property name="text">
-         <string>Address:</string>
+         <string>Адрес:</string>
         </property>
        </widget>
       </item>
@@ -664,7 +810,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Read</string>
+      <string>Считать</string>
      </property>
      <property name="autoDefault">
       <bool>false</bool>
@@ -677,14 +823,14 @@
    <widget class="QGroupBox" name="groupWrite">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>670</x>
       <y>370</y>
       <width>301</width>
       <height>81</height>
      </rect>
     </property>
     <property name="title">
-     <string>Write</string>
+     <string>Запись</string>
     </property>
     <widget class="QWidget" name="horizontalLayoutWidget_2">
      <property name="geometry">
@@ -699,7 +845,7 @@
       <item>
        <widget class="QLabel" name="writeLabel_0">
         <property name="text">
-         <string>Address:</string>
+         <string>Адрес:</string>
         </property>
        </widget>
       </item>
@@ -721,7 +867,7 @@
       <item>
        <widget class="QLabel" name="writeLabel_1">
         <property name="text">
-         <string>Integer: </string>
+         <string>Число:</string>
         </property>
        </widget>
       </item>
@@ -743,7 +889,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Write</string>
+      <string>Записать</string>
      </property>
      <property name="autoDefault">
       <bool>false</bool>
@@ -758,19 +904,19 @@
      <rect>
       <x>10</x>
       <y>310</y>
-      <width>221</width>
+      <width>201</width>
       <height>141</height>
      </rect>
     </property>
     <property name="title">
-     <string>Info</string>
+     <string>Информация</string>
     </property>
     <widget class="QWidget" name="gridLayoutWidget_2">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>201</width>
+       <width>181</width>
        <height>111</height>
       </rect>
      </property>
@@ -778,7 +924,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="infoLabel_1">
         <property name="text">
-         <string>Memory capacity:</string>
+         <string>Объем памяти:</string>
         </property>
        </widget>
       </item>
@@ -792,7 +938,7 @@
       <item row="3" column="0">
        <widget class="QLabel" name="infoLabel_2">
         <property name="text">
-         <string>Words in memory:</string>
+         <string>Слов в памяти:</string>
         </property>
        </widget>
       </item>
@@ -806,7 +952,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="infoLabel_0">
         <property name="text">
-         <string>Word size:</string>
+         <string>Размер слова:</string>
         </property>
        </widget>
       </item>
@@ -820,14 +966,14 @@
       <item row="4" column="0">
        <widget class="QLabel" name="infoLabel_3">
         <property name="text">
-         <string>Cache capacity:</string>
+         <string>Объем кэша:</string>
         </property>
        </widget>
       </item>
       <item row="5" column="0">
        <widget class="QLabel" name="infoLabel_4">
         <property name="text">
-         <string>Words in cache:</string>
+         <string>Слов в кэше:</string>
         </property>
        </widget>
       </item>
@@ -851,23 +997,26 @@
    <widget class="QGroupBox" name="groupConsole">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>220</x>
       <y>310</y>
-      <width>371</width>
+      <width>441</width>
       <height>141</height>
      </rect>
     </property>
     <property name="title">
-     <string>Console</string>
+     <string>Консоль</string>
     </property>
     <widget class="QPlainTextEdit" name="console">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>20</y>
-       <width>351</width>
+       <width>421</width>
        <height>111</height>
       </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
      <property name="plainText">
       <string/>
@@ -880,7 +1029,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>930</width>
+     <width>980</width>
      <height>21</height>
     </rect>
    </property>

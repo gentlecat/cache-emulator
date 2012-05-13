@@ -15,6 +15,7 @@ public:
     bitset<WORD> read(const unsigned int &address, bool &hitChecker);
     bool write(const bitset<WORD> &word, const unsigned int &address, bool &hitChecker);
     unsigned int getTag(const unsigned int &entryId);
+    unsigned int getAge(const unsigned int &entryId);
     bitset<WORD> getEntryData(const unsigned int &entryId, const unsigned int &offset);
     void randomizeMemory();
 private:
