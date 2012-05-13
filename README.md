@@ -9,5 +9,6 @@ Before using it make sure you have Microsoft Visual C++ 2010 Redistributable Pac
 It's available in Microsoft Download Center ([x86](http://www.microsoft.com/en-us/download/details.aspx?id=8328)
 and [x64](http://www.microsoft.com/en-us/download/details.aspx?id=13523)).
 
+![](http://i.imgur.com/tztHe.png)
 
 Chip icon is by [IconEden](http://www.iconeden.com/).
