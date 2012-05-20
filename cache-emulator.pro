@@ -14,15 +14,18 @@ SOURCES += main.cpp\
     stdafx.cpp \
     Cache.cpp \
     CacheEntry.cpp \
-    Memory.cpp
+    Memory.cpp \
+    AboutDialog.cpp
 
 HEADERS  += MainWindow.h \
     stdafx.h \
     Cache.h \
     CacheEntry.h \
-    Memory.h
+    Memory.h \
+    AboutDialog.h
 
-FORMS    += MainWindow.ui
+FORMS    += MainWindow.ui \
+    AboutDialog.ui
 
 win32:RC_FILE += app.rc
 

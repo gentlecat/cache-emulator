@@ -28,10 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Connecting actions
     connect(ui->actionRandomize, SIGNAL(triggered()), this, SLOT(randomizeMemory()));
+    connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(openAboutDialog()));
     connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
-
-    // Tests:
-    //ui->data_0_0->setStyleSheet("QLabel { background-color : black; color : yellow; }");
 }
 
 MainWindow::~MainWindow()
@@ -152,6 +150,12 @@ void MainWindow::randomizeMemory()
 {
     cache.randomizeMemory();
     refreshCacheDisplay();
+}
+
+void MainWindow::openAboutDialog()
+{
+    aboutDialog = new AboutDialog(this);
+    aboutDialog->show();
 }
 
 void MainWindow::print(const QString &text)

@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include <QMainWindow>
+#include "AboutDialog.h"
 #include "Cache.h"
 
 using std::bitset;
@@ -24,9 +25,11 @@ public slots:
     void read();
     void write();
     void randomizeMemory();
+    void openAboutDialog();
 
 private:
     Ui::MainWindow *ui;
+    AboutDialog *aboutDialog;
     void print(const QString &text);
     QString getString(const bitset<WORD> &word);
 };
