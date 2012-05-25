@@ -42,7 +42,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Содержимое кэша</string>
+     <string>Cache entries</string>
     </property>
     <widget class="QWidget" name="gridLayoutWidget">
      <property name="geometry">
@@ -510,7 +510,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Индекс</string>
+         <string>ID</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -528,7 +528,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Тег</string>
+         <string>Tag</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -546,7 +546,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Данные №1</string>
+         <string>Data #1</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -564,7 +564,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Данные №2</string>
+         <string>Data #2</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -582,7 +582,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Данные №3</string>
+         <string>Data #3</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -600,7 +600,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Данные №4</string>
+         <string>Data #4</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -625,7 +625,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Возраст</string>
+         <string>Age</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -773,7 +773,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Чтение</string>
+     <string>Reading</string>
     </property>
     <widget class="QWidget" name="horizontalLayoutWidget">
      <property name="geometry">
@@ -788,7 +788,7 @@
       <item>
        <widget class="QLabel" name="readLabel">
         <property name="text">
-         <string>Адрес:</string>
+         <string>Address:</string>
         </property>
        </widget>
       </item>
@@ -810,7 +810,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Считать</string>
+      <string>Read</string>
      </property>
      <property name="autoDefault">
       <bool>false</bool>
@@ -830,7 +830,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Запись</string>
+     <string>Writing</string>
     </property>
     <widget class="QWidget" name="horizontalLayoutWidget_2">
      <property name="geometry">
@@ -845,7 +845,7 @@
       <item>
        <widget class="QLabel" name="writeLabel_0">
         <property name="text">
-         <string>Адрес:</string>
+         <string>Address:</string>
         </property>
        </widget>
       </item>
@@ -867,7 +867,7 @@
       <item>
        <widget class="QLabel" name="writeLabel_1">
         <property name="text">
-         <string>Число:</string>
+         <string>Integer: </string>
         </property>
        </widget>
       </item>
@@ -889,7 +889,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Записать</string>
+      <string>Write</string>
      </property>
      <property name="autoDefault">
       <bool>false</bool>
@@ -909,7 +909,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Информация</string>
+     <string>Information</string>
     </property>
     <widget class="QWidget" name="gridLayoutWidget_2">
      <property name="geometry">
@@ -924,7 +924,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="infoLabel_1">
         <property name="text">
-         <string>Объем памяти:</string>
+         <string>Memory capacity:</string>
         </property>
        </widget>
       </item>
@@ -938,7 +938,7 @@
       <item row="3" column="0">
        <widget class="QLabel" name="infoLabel_2">
         <property name="text">
-         <string>Слов в памяти:</string>
+         <string>Words in memory:</string>
         </property>
        </widget>
       </item>
@@ -952,7 +952,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="infoLabel_0">
         <property name="text">
-         <string>Размер слова:</string>
+         <string>Word size:</string>
         </property>
        </widget>
       </item>
@@ -966,14 +966,14 @@
       <item row="4" column="0">
        <widget class="QLabel" name="infoLabel_3">
         <property name="text">
-         <string>Объем кэша:</string>
+         <string>Cache capacity:</string>
         </property>
        </widget>
       </item>
       <item row="5" column="0">
        <widget class="QLabel" name="infoLabel_4">
         <property name="text">
-         <string>Слов в кэше:</string>
+         <string>Words in cache:</string>
         </property>
        </widget>
       </item>
@@ -1004,7 +1004,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Консоль</string>
+     <string>Console</string>
     </property>
     <widget class="QPlainTextEdit" name="console">
      <property name="geometry">
