@@ -1,7 +1,7 @@
 Cache Emulator
 ==============
 
-This application emulates [CPU cache](http://en.wikipedia.org/wiki/CPU_cache).
+This application emulates [CPU cache](http://en.wikipedia.org/wiki/CPU_cache). It's built using [Qt framework](http://qt-project.org/).
 
 Installation
 ------------
