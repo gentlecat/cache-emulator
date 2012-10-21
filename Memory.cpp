@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Memory.h"
 #include <time.h>
+#include <stdlib.h>
 
 Memory::Memory(void)
 {
