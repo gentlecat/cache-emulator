@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stdafx.h>
+#include <application\stdafx.h>
 
 #define WORDS_IN_BLOCK 4
 #define BLOCK_LENGTH WORD*WORDS_IN_BLOCK
