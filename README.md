@@ -16,4 +16,4 @@ and [x64](http://www.microsoft.com/en-us/download/details.aspx?id=13523)).
 What was used
 -------------
 
- * Chip icon is by [IconEden](http://www.iconeden.com/).
+ * Chip icon made by [IconEden](http://www.iconeden.com/).
