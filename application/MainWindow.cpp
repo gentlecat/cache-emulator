@@ -152,6 +152,7 @@ void MainWindow::randomizeMemory()
 {
     cache.randomizeMemory();
     refreshCacheDisplay();
+    print("Memory contents were randomized.");
 }
 
 void MainWindow::openAboutDialog()
