@@ -18,6 +18,7 @@ public:
     unsigned int getAge(const unsigned int &entryId);
     bitset<WORD> getEntryData(const unsigned int &entryId, const unsigned int &offset);
     void randomizeMemory();
+
 private:
 	Cache(void);
 	Memory *memory;

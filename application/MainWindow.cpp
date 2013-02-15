@@ -108,23 +108,25 @@ void MainWindow::read()
 {
     bool converted;
     unsigned int address = ui->readAddress->text().toInt(&converted, 10);
+    QString operation = "Reading from " + QString::number(address) + ": ";
     if (converted)
     {
         bool hit;
         QString output = getString(cache.read(address, hit));
-        hit ? print(output + " (cache hit)") : print(output + " (cache miss)");
+        hit ? print(operation + output + " (hit)") : print(operation + output + " (miss)");
         refreshCacheDisplay();
     }
     else
     {
-        print("Wrong address!");
+        print(operation + "Wrong address!");
     }
 }
 
 void MainWindow::write()
 {
     bool converted;
-    unsigned int address = ui->writeAddress->text().toInt(&converted, 10);
+    unsigned int address = ui->writeAddress->text().toInt(&converted, 10);    
+    QString operation = "Writing to " + QString::number(address) + ": ";
     if (converted)
     {
         int integer = ui->writeInt->text().toInt(&converted, 10);
@@ -132,17 +134,17 @@ void MainWindow::write()
         {
             bool hit;
             cache.write(bitset<WORD>(integer), address, hit);
-            hit ? print("Cache hit.") : print("Cache miss.");
+            hit ? print(operation + "Cache hit.") : print(operation + "Cache miss.");
             refreshCacheDisplay();
         }
         else
         {
-            print("Wrong number!");
+            print(operation + "Wrong number!");
         }
     }
     else
     {
-        print("Wrong address!");
+        print(operation + "Wrong address!");
     }
 }
 

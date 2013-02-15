@@ -21,6 +21,7 @@ public:
 	unsigned int getAge();
 	void incrementAge();
 	bool isModified();
+
 private:
 	unsigned int firstWordTag;
 	bool modified;

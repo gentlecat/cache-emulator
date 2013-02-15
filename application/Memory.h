@@ -14,6 +14,7 @@ public:
     bitset<WORD> getWord(const unsigned int &address);
     void writeWord(const bitset<WORD> &word, const unsigned int &address);
     void randomize(void);
+
 private:
     bitset<MEMORY_CAPACITY> memory;
 };
