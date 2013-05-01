@@ -9,22 +9,22 @@ OTHER_FILES += \
     README.md
 
 HEADERS += \
-    application/stdafx.h \
-    application/Memory.h \
-    application/MainWindow.h \
-    application/CacheEntry.h \
-    application/Cache.h \
-    application/AboutDialog.h
+    core/stdafx.h \
+    core/Memory.h \
+    core/CacheEntry.h \
+    core/Cache.h \
+    ui/MainWindow.h \
+    ui/AboutDialog.h
 
 SOURCES += \
-    application/stdafx.cpp \
-    application/Memory.cpp \
-    application/MainWindow.cpp \
-    application/main.cpp \
-    application/CacheEntry.cpp \
-    application/Cache.cpp \
-    application/AboutDialog.cpp
+    core/stdafx.cpp \
+    core/Memory.cpp \
+    core/main.cpp \
+    core/CacheEntry.cpp \
+    core/Cache.cpp \
+    ui/MainWindow.cpp \
+    ui/AboutDialog.cpp
 
 FORMS += \
-    application/MainWindow.ui \
-    application/AboutDialog.ui
+    ui/MainWindow.ui \
+    ui/AboutDialog.ui

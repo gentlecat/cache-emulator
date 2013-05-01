@@ -1,8 +1,8 @@
-#include "stdafx.h"
+#include "../core/stdafx.h"
+#include "../core/Cache.h"
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 #include "Memory.h"
-#include "Cache.h"
 
 using std::bitset;
 
