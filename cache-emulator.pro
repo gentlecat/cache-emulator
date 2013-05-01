@@ -6,7 +6,9 @@ TEMPLATE = app
 win32:RC_FILE += app.rc
 
 OTHER_FILES += \
-    README.md
+    README.md \
+    LICENSE \
+    app.rc
 
 HEADERS += \
     core/stdafx.h \
