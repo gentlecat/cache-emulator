@@ -1,10 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "stdafx.h"
+#include "../core/stdafx.h"
+#include "../core/Cache.h"
 #include <QMainWindow>
 #include "AboutDialog.h"
-#include "Cache.h"
 
 using std::bitset;
 
