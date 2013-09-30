@@ -1,8 +1,8 @@
 #include "../core/stdafx.h"
 #include "../core/Cache.h"
+#include "Memory.h"
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
-#include "Memory.h"
 
 using std::bitset;
 
@@ -11,8 +11,7 @@ Cache cache(ram);
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
+    ui(new UI::MainWindow) {
     ui->setupUi(this);
 
     // Filling info
@@ -32,14 +31,12 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::refreshCacheDisplay()
-{
-   // Entry 0
+void MainWindow::refreshCacheDisplay() {
+    // Entry 0
     ui->tag_0->setText(QString::number(cache.getTag(0)));
     ui->data_0_0->setText(getString(cache.getEntryData(0, 0)));
     ui->data_0_1->setText(getString(cache.getEntryData(0, 1)));
@@ -104,73 +101,57 @@ void MainWindow::refreshCacheDisplay()
     ui->age_7->setText(QString::number(cache.getAge(7)));
 }
 
-void MainWindow::read()
-{
+void MainWindow::read() {
     bool converted;
     unsigned int address = ui->readAddress->text().toInt(&converted, 10);
     QString operation = "Reading from " + QString::number(address) + ": ";
-    if (converted)
-    {
+    if (converted) {
         bool hit;
         QString output = getString(cache.read(address, hit));
         hit ? print(operation + output + " (hit)") : print(operation + output + " (miss)");
         refreshCacheDisplay();
-    }
-    else
-    {
+    } else {
         print(operation + "Wrong address!");
     }
 }
 
-void MainWindow::write()
-{
+void MainWindow::write() {
     bool converted;
-    unsigned int address = ui->writeAddress->text().toInt(&converted, 10);    
+    unsigned int address = ui->writeAddress->text().toInt(&converted, 10);
     QString operation = "Writing to " + QString::number(address) + ": ";
-    if (converted)
-    {
+    if (converted) {
         int integer = ui->writeInt->text().toInt(&converted, 10);
-        if (converted)
-        {
+        if (converted) {
             bool hit;
             cache.write(bitset<WORD>(integer), address, hit);
             hit ? print(operation + "Cache hit.") : print(operation + "Cache miss.");
             refreshCacheDisplay();
-        }
-        else
-        {
+        } else {
             print(operation + "Wrong number!");
         }
-    }
-    else
-    {
+    } else {
         print(operation + "Wrong address!");
     }
 }
 
-void MainWindow::randomizeMemory()
-{
+void MainWindow::randomizeMemory() {
     cache.randomizeMemory();
     refreshCacheDisplay();
     print("Memory contents were randomized.");
 }
 
-void MainWindow::openAboutDialog()
-{
+void MainWindow::openAboutDialog() {
     aboutDialog = new AboutDialog(this);
     aboutDialog->show();
 }
 
-void MainWindow::print(const QString &text)
-{
+void MainWindow::print(const QString &text) {
     ui->console->appendPlainText(text);
 }
 
-QString MainWindow::getString(const bitset<WORD> &word)
-{
+QString MainWindow::getString(const bitset<WORD> &word) {
     QString output;
-    for (int bit=word.size()-1; bit>=0; bit--)
-    {
+    for (int bit=word.size()-1; bit>=0; bit--) {
         word[bit] ? output.append("1") : output.append("0");
     }
     return output;

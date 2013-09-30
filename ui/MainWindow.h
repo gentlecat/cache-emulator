@@ -1,14 +1,15 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef UI_MAINWINDOW_H_
+#define UI_MAINWINDOW_H_
+
+#include <QMainWindow>
 
 #include "../core/stdafx.h"
 #include "../core/Cache.h"
-#include <QMainWindow>
 #include "AboutDialog.h"
 
 using std::bitset;
 
-namespace Ui {
+namespace UI {
 class MainWindow;
 }
 
@@ -28,10 +29,11 @@ public slots:
     void openAboutDialog();
 
 private:
-    Ui::MainWindow *ui;
-    AboutDialog *aboutDialog;
     void print(const QString &text);
     QString getString(const bitset<WORD> &word);
+
+    UI::MainWindow *ui;
+    AboutDialog *aboutDialog;
 };
 
-#endif // MAINWINDOW_H
+#endif // UI_MAINWINDOW_H_

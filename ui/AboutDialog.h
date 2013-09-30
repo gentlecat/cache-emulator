@@ -1,9 +1,9 @@
-#ifndef ABOUTDIALOG_H
-#define ABOUTDIALOG_H
+#ifndef UI_ABOUTDIALOG_H_
+#define UI_ABOUTDIALOG_H_
 
 #include <QDialog>
 
-namespace Ui {
+namespace UI {
 class AboutDialog;
 }
 
@@ -16,7 +16,7 @@ public:
     ~AboutDialog();
     
 private:
-    Ui::AboutDialog *ui;
+    UI::AboutDialog *ui;
 };
 
-#endif // ABOUTDIALOG_H
+#endif // UI_ABOUTDIALOG_H_

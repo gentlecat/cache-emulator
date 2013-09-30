@@ -19,13 +19,14 @@ HEADERS += \
     ui/AboutDialog.h
 
 SOURCES += \
-    core/stdafx.cpp \
-    core/Memory.cpp \
     core/main.cpp \
-    core/CacheEntry.cpp \
+    core/stdafx.cpp \
     core/Cache.cpp \
-    ui/MainWindow.cpp \
-    ui/AboutDialog.cpp
+    core/CacheEntry.cpp \
+    core/main.cpp \
+    core/Memory.cpp \
+    ui/AboutDialog.cpp \
+    ui/MainWindow.cpp
 
 FORMS += \
     ui/MainWindow.ui \
